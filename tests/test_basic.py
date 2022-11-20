@@ -206,6 +206,6 @@ async def test_basic_asgi_client(app):
         },
     }
 
-    _, response = await app.asgi_client.post("/gh", json=test_push)
+    _, response = await app.asgi_client.post("/gh", headers={"x-hub-signature-256": "test"})
 
     assert response.status == 200

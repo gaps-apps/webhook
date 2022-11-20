@@ -18,6 +18,7 @@ pytest-asyncio = "*"
 tortoise-orm = {extras = ["asyncpg"], version = "*"}
 sanic-testing = "*"
 aerich = "*"
+isort = "*"
 
 [requires]
 python_version = "3.11"
