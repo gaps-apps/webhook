@@ -19,6 +19,7 @@ tortoise-orm = {extras = ["asyncpg"], version = "*"}
 sanic-testing = "*"
 aerich = "*"
 isort = "*"
+aio-pika = "*"
 
 [requires]
 python_version = "3.11"
