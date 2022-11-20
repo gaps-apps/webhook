@@ -17,7 +17,7 @@ def create_app():
         signature = hmac.new(
             bytes(GH_WH_SECRET, "utf-8"), request.body, digestmod=hashlib.sha256
         )
-        logger.info(f"sha256={signature}")
+        logger.info(f"sha256={signature.hexdigest()}")
         return text("ok")
 
     return app
