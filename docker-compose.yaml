@@ -2,10 +2,10 @@ version: "3.5"
 
 services:
 
-  bots_party:
-    container_name: bots_party
+  webhook:
+    container_name: webhook
     restart: always
-    image: bots_party:latest
+    image: webhook:latest
     build:
       context: .
       dockerfile: Dockerfile
