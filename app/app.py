@@ -38,6 +38,7 @@ def create_app():
         try:
             header = request.headers["x-hub-signature-256"]
             logger.info(header)
+
             signature = hmac.new(
                 bytes(GH_WH_SECRET, "utf-8"), request.body, digestmod=hashlib.sha256
             )
@@ -45,12 +46,12 @@ def create_app():
             logger.info(token)
 
             if token == header:
-                event = request.json()
+                event = request.json
                 await publish_event(
-                    {"repo": event["repository"]["full_name"], "refs": event["refs"]}
+                    {"repo": event["repository"]["full_name"], "refs": event["ref"]}
                 )
                 return text("ok")
         except:
-            SanicException(status_code=400)
+            raise SanicException(status_code=400)
 
     return app
