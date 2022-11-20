@@ -3,10 +3,10 @@ from sanic.response import text
 
 
 def create_app():
-    app = Sanic("MyHelloWorldApp")
+    app = Sanic("webhook")
 
-    @app.get("/")
-    async def hello_world(request):
-        return text("Hello, world.")
+    @app.post("/gh")
+    async def from_github(request):
+        return text("ok")
 
     return app

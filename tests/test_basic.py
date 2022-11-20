@@ -10,8 +10,6 @@ def app():
 
 @pytest.mark.asyncio
 async def test_basic_asgi_client(app):
-    request, response = await app.asgi_client.get("/")
+    _, response = await app.asgi_client.post("/gh")
 
-    assert request.method.lower() == "get"
-    assert response.body == b"Hello, world."
     assert response.status == 200
