@@ -12,7 +12,7 @@ COPY ./Pipfile.* /opt/
 WORKDIR /opt/
 
 RUN pipenv --python 3.11
-RUN pipenv install
+RUN pipenv sync 
 
 COPY ./ /opt
 
