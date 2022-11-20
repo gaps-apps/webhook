@@ -12,7 +12,7 @@ COPY ./Pipfile.* /opt/
 WORKDIR /opt/
 
 RUN pipenv --python 3.11
-RUN pipenv sync 
+RUN pipenv -v sync 
 
 COPY ./ /opt
 
