@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+orjson = "*"
+sanic = "*"
+pydantic = "*"
+uvicorn = "*"
+uvloop = "*"
+peewee = "*"
+httpx = "*"
+black = "*"
+mypy = "*"
+pytest = "*"
+pytest-asyncio = "*"
+tortoise-orm = {extras = ["asyncpg"], version = "*"}
+sanic-testing = "*"
+aerich = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.0"
+
+[pipenv]
+allow_prereleases = true

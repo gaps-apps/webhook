@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+
+  bots_party:
+    container_name: bots_party
+    restart: always
+    image: bots_party:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8801:8001"
